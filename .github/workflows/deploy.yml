@@ -34,7 +34,7 @@ jobs:
           cache-dependency-path: 'h5-client/package-lock.json'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --legacy-peer-deps
         working-directory: ./h5-client
 
       - name: Build
