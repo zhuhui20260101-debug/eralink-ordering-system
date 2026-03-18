@@ -1,12 +1,41 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary: #E53935;
+  --color-primary: #FF4B3A; /* A very vibrant, modern food-app orange/red */
+  --color-primary-light: #FFF2F0;
 }
 
 @layer base {
   body {
     background-color: var(--color-gray-50);
     color: var(--color-gray-900);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
+}
+
+/* Hide scrollbar for smooth sleek scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Animations for modals */
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
 }
